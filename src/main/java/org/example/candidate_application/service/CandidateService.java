@@ -54,4 +54,12 @@ public class CandidateService {
         return candidateRepository.save(candidate);
     }
 
+    public boolean deleteCandidateById(Long id) {
+        if (candidateRepository.existsById(id)) {
+            candidateRepository.deleteById(id);
+            return true;
+        }
+        return false;
+    }
+
 }
